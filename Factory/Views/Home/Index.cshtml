@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Welcome to Dr. Sillystringz Thingamabob Constructorium</h1>
+
+<h3>Engineers</h3>
+<ul>
+@if(ViewBag.EngineersList.Count == 0)
+{
+  <p>No engineers have been hired yet</p>
+}
+</ul>
+
+<ul>
+<h3>Machines</h3>
+@if(ViewBag.MachinesList.Count == 0)
+{
+  <p>No machines have been purchased yet</p>
+}
+</ul>
+
+<p>@Html.ActionLink("Go to Engineers Portal","Index", "Engineers")</p>
+<p>@Html.ActionLink("Go to Machines Portal","Index","Machines")</p>
