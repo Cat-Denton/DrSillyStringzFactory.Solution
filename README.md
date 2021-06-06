@@ -36,29 +36,8 @@ _This program allows the user to create both Engineers and Machines. Engineers c
 }
 ```
 * Type "dotnet build" in terminal and hit enter
-* Set up database in a mysql terminal
-```
-CREATE DATABASE `cat_denton`;
-    USE cat_denton;
-    CREATE TABLE `engineers` (
-        `EngineerId` int(11) NOT NULL AUTO_INCREMENT,
-        `Name` varchar(255) DEFAULT NULL,
-        `ContactInfo` varchar(255) DEFAULT NULL,
-        PRIMARY KEY (`EngineerId`)
-    );
-    CREATE TABLE `machines` (
-        `MachineId` int(11) NOT NULL AUTO_INCREMENT,
-        `Model` varchar(255) DEFAULT NULL,
-        `Make` varchar(255) DEFAULT NULL,
-        PRIMARY KEY (`MachineId`)
-    );
-    CREATE TABLE `engineer_machine` (
-        `EngineerMachineId` int(11) NOT NULL AUTO_INCREMENT,
-        `EngineerId` int(11) NOT NULL DEFAULT '0',
-        `MachineId` int(11) NOT NULL DEFAULT '0',
-        PRIMARY KEY (`EngineerMachineId`)
-    );
-```
+* Type "dotnet ef migrations add Initial"
+* Type "dotnet ef database update"
 * Type "dotnet run" in the terminal and hit enter
 
 ## Known Bugs
