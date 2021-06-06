@@ -4,10 +4,9 @@
 
 @model Factory.Models.Engineer
 
-<h2>Add a Machine</h2>
-
-<h4>Add a Machine to this Engineer: @Html.DisplayFor(model => model.Name)</h4>
-
+<h4><span class="label">Add a Machine to this Engineer</span>: @Html.DisplayFor(model => model.Name)</h4>
+<br>
+<br>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
@@ -17,6 +16,7 @@
 
   <input type="submit" value="Save" />
 }
-
+<br>
+<br>
 <p>@Html.ActionLink("Back to Engineer", "Details", new { id = Model.EngineerId } )</p>
 <p>@Html.ActionLink("Back to Engineer portal", "Index")</p>

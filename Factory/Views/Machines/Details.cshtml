@@ -18,7 +18,7 @@ else
   <h3>Engineers this Machine has been assigned to:</h3>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Machine.Model</li>
+    <li>@join.Engineer.Name</li>
       @using (Html.BeginForm("DeleteEngineer","Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)

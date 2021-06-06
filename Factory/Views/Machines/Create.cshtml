@@ -9,11 +9,14 @@
 {
   @Html.LabelFor(model => model.Model)
   @Html.TextBoxFor(model => model.Model)
-
+  <br>
+  <br>
   @Html.LabelFor(model => model.Make)
   @Html.TextBoxFor(model => model.Make)
-
+  <br>
+  <br>
   <input type = "submit" value="Add new Machine" class="btn btn-default" />
 }
-
+<br>
+<br>
 <p>@Html.ActionLink("Back to Machines Portal","Index")</p>

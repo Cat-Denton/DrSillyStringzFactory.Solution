@@ -46,7 +46,6 @@ namespace Factory.Controllers
     public ActionResult Edit(int id)
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(Engineer => Engineer.EngineerId == id);
-      ViewBag.MachineId = new SelectList(_db.Machines,"MachineId","Model");
       return View(thisEngineer);
     }
 
@@ -55,7 +54,7 @@ namespace Factory.Controllers
     {
       _db.Entry(Engineer).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new {id = Engineer.EngineerId});
     }
     public ActionResult AddMachine(int id)
     {
